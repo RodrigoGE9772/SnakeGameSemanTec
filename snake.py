@@ -48,6 +48,66 @@ def move():
     else:
         snake.pop(0)
 
+    #sumar a ta x de food 10 pixeles
+    #Se mueve la comida 10 pixeles, en caso de estar cerca de una de las paredes no se movera hacia esa diraccion
+    if (food.x == -150):
+        if head != food:
+            movefood = randrange(1, 40)
+            if movefood == 10:
+                food.x += 10
+            elif movefood == 20:
+                food.y += 10
+            elif movefood == 30:
+                food.x -= 10
+            else:
+                food.x = food.x
+    elif (food.x == 140):
+        if head != food:
+            movefood = randrange(1, 40)
+            if movefood == 10:
+                food.y += 10
+            elif movefood == 30:
+                food.y -=10
+            elif movefood == 20:
+                food.x -= 10
+            else:
+                food.x = food.x
+    elif (food.y == -150):
+        if head != food:
+            movefood = randrange(1, 40) 
+            if movefood == 10:
+                food.x += 10
+            elif movefood == 20:
+                food.y += 10
+            elif movefood == 30:
+                food.x -= 10
+            else:
+                food.x = food.x
+    elif (food.y == 140):
+        if head != food:
+            movefood = randrange(1, 40)
+            if movefood == 10:
+                food.x += 10
+            elif movefood == 20:
+                food.y -= 10
+            elif movefood == 30:
+                food.x -= 10
+            else:
+                food.x = food.x
+    else:
+        if head != food:
+            movefood = randrange(1, 40)
+            if movefood == 10:
+                food.x += 10
+            elif movefood == 20:
+                food.y -= 10
+            elif movefood == 39:
+                food.y += 10
+            elif movefood == 30:
+                food.x -= 10
+            else:
+                food.x = food.x
+
     clear()
 
     for body in snake:
